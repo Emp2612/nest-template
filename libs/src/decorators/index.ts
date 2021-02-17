@@ -1,1 +1,1 @@
-export * from './require-auth.decorator'
+export * from './require-auth.decorator';

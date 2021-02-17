@@ -1,5 +1,5 @@
-import { IsString, IsInt, IsNotEmpty, IsNumberString, IsDefined, IsOptional } from 'class-validator';
-import { Transform, Type } from "class-transformer";
+import { IsString, IsInt, IsNotEmpty, IsOptional } from 'class-validator';
+import { Type } from 'class-transformer';
 
 export class CreateTestDto {
   @IsNotEmpty({ message: '请填写姓名' })

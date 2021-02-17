@@ -12,7 +12,8 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
   async validate(username: string, password: string): Promise<any> {
     const user = await this.usersService.findByUsername(username);
     if (user && user.password === password) {
-      const { password, ...result } = user;
+      const { ...result } = user;
+      delete result.password;
       return result;
     }
     throw new BadRequestException('用户名不存在或者密码不正确');

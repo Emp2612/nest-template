@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
-import { AdminService } from './admin.service';
+import { ConfigModule } from '@nestjs/config';
+import { PrismaService } from './prisma.service';
 import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [AuthModule],
+  imports: [ConfigModule.forRoot({ isGlobal: true, cache: true }), AuthModule],
   controllers: [],
-  providers: [AdminService],
+  providers: [PrismaService],
 })
 export class AdminModule {}
